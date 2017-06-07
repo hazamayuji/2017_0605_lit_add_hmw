@@ -6,14 +6,29 @@ void ofApp::setup(){
     ofBackground(0,0,0);
     //フレームレートを60に設定
     ofSetFrameRate(60);
-    
+    //透明度を有効に
     ofEnableAlphaBlending();
+    
+    
     
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    
+    //範囲に入ったかを確認
+    if(width/4 < ofGetMouseX() && ofGetMouseX() < width/2 && height/4 < ofGetMouseY() && height*3/4 > ofGetMouseY()){
+        enter_range[0] = true;
+    }else{
+        enter_range[0] = false;
+    }
+    
+    if(width/2 < ofGetMouseX() && ofGetMouseX() < width*3/4 && height/4 < ofGetMouseY() && height*3/4 > ofGetMouseY()){
+        enter_range[1] = true;
+    }else{
+        enter_range[1] = false;
+    }
 
 }
 
@@ -56,13 +71,13 @@ void ofApp::keyReleased(int key){
 void ofApp::mouseMoved(int x, int y ){
     
     //カバー
-    if(width/4 < x && x < width/2 && height/4 < y && height*3/4 > y){
+    if(enter_range[0]){
         mouse_moved[0] = true;
     }else{
         mouse_moved[0] = false;
     }
     
-    if(width/2 < x && x < width*3/4 && height/4 < y && height*3/4 > y){
+    if(enter_range[1]){
         mouse_moved[1] = true;
     }else{
         mouse_moved[1] = false;
@@ -80,11 +95,11 @@ void ofApp::mousePressed(int x, int y, int button){
     
     //マウスが押された時
     //ここの条件のところを綺麗にしようとしましたが思いつきませんでした
-    if(width/4 < x && x < width/2 && height/4 < y && height*3/4 > y){
+    if(enter_range[0]){
         rect_clicked[0] = true;
     }
     
-    if(width/2 < x && x < width*3/4 && height/4 < y && height*3/4 > y){
+    if(enter_range[1]){
         rect_clicked[1] = true;
     }
 
@@ -94,11 +109,11 @@ void ofApp::mousePressed(int x, int y, int button){
 void ofApp::mouseReleased(int x, int y, int button){
    
     //マウスがはなされた時
-    if(width/4 < x && x < width/2 && height/4 < y && height*3/4 > y){
+    if(enter_range[0]){
         rect_clicked[0] = false;
     }
     
-    if(width/2 < x && x < width*3/4 && height/4 < y && height*3/4 > y){
+    if(enter_range[1]){
         rect_clicked[1] = false;
     }
 }

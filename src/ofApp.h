@@ -32,7 +32,8 @@ class ofApp : public ofBaseApp{
     float height = ofGetHeight();
     
     bool rect_clicked[2] = {false, false};//{rect_a,rect_b}
-    bool mouse_moved[2] = {false, false};
+    bool mouse_moved[2] = {false, false};//{rect_a,rect_b}
+    bool enter_range[2] = {false, false};//{rect_a,rect_b}
 
     
     
