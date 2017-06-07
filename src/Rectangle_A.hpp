@@ -1,0 +1,24 @@
+//
+//  Rectangle_A.hpp
+//  2017_0605_lit_add_hmw
+//
+//  Created by 狭間祐至 on 2017/06/06.
+//
+//
+
+#pragma once
+
+#include "ofMain.h"
+#include "Rectangle.hpp"
+
+//クラスを継承する
+class Rectangle_A :public Rectangle{
+
+public:
+    //純粋仮想関数を使用
+    void draw_rectangle();
+    void click_action();
+    void white_cover();
+    void set_rectangle();
+};
+
