@@ -28,14 +28,13 @@ class ofApp : public ofBaseApp{
     Rectangle_A rect_a;
     Rectangle_B rect_b;
     
+    //使いやすく
     float width = ofGetWidth();
     float height = ofGetHeight();
     
+    //判定
     bool rect_clicked[2] = {false, false};//{rect_a,rect_b}
     bool mouse_moved[2] = {false, false};//{rect_a,rect_b}
     bool enter_range[2] = {false, false};//{rect_a,rect_b}
-
     
-    
-		
 };

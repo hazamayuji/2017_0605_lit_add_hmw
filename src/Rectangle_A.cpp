@@ -8,19 +8,19 @@
 
 #include "Rectangle_A.hpp"
 
-void Rectangle_A::set_rectangle(){
+void Rectangle_A::set(){
     ofDrawRectangle(width/4, height/4, width/4, height/2);
 }
 
 
 //四角形を書く(1)
-void Rectangle_A::draw_rectangle(){
+void Rectangle_A::draw(){
     //赤色
     ofSetColor(255, 0, 0);
-    set_rectangle();
+    set();
 }
 
-void Rectangle_A::click_action(){
+void Rectangle_A::action(){
     ofNoFill();
     for(int i = 0; i < 15; i++){
         ofSetColor(0, 0, 255);
@@ -29,8 +29,13 @@ void Rectangle_A::click_action(){
     ofFill();
 }
 
-void Rectangle_A::white_cover(){
-    ofSetColor(255, 255, 255, 127);
-    set_rectangle();
-
+void Rectangle_A::cover(){
+    ofSetColor(0, 0, 255, 127);
+    set();
 }
+
+void Rectangle_A::sound_play_A(){
+    soundplayer.load("1.wav");
+    float volume_a = 10.0;
+    sound_set(volume_a);
+    }

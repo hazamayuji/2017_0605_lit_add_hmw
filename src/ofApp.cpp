@@ -9,9 +9,6 @@ void ofApp::setup(){
     //透明度を有効に
     ofEnableAlphaBlending();
     
-    
-    
-
 }
 
 //--------------------------------------------------------------
@@ -35,25 +32,28 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
+    
     //クリックされた時
     if(rect_clicked[0]){
-        rect_a.click_action();
+        rect_a.action();
+        rect_a.sound_play_A();
     }else if(rect_clicked[1]){
-        rect_b.click_action();
+        rect_b.action();
+        rect_b.sound_play_B();
     }
     
     //左側の四角形を描画
-    rect_a.draw_rectangle();
+    rect_a.draw();
 
     //右側の四角形を描画
-    rect_b.draw_rectangle();
+    rect_b.draw();
 
     
     //カバーをかける
     if(mouse_moved[0]){
-        rect_a.white_cover();
+        rect_a.cover();
     }else if(mouse_moved[1]){
-        rect_b.white_cover();
+        rect_b.cover();
     }
 }
 

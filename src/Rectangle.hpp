@@ -13,10 +13,15 @@ class Rectangle{
     
 public:
     //純粋仮想関数をつくる
-    virtual void draw_rectangle() = 0;
-    virtual void click_action() = 0;
-    virtual void white_cover() = 0;
-    virtual void set_rectangle() = 0;
+    virtual void draw() = 0;
+    virtual void action() = 0;
+    virtual void cover() = 0;
+    virtual void set() = 0;
+    
+    
+    ofSoundPlayer soundplayer;
+    void sound_set(float &volume);
+    
     
     float width = ofGetWidth();
     float height = ofGetHeight();

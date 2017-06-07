@@ -8,3 +8,8 @@
 
 #include "Rectangle.hpp"
 
+void Rectangle::sound_set(float &volume){
+    soundplayer.setLoop(false);
+    soundplayer.setVolume(volume);
+    soundplayer.play();
+}
