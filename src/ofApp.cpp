@@ -94,7 +94,6 @@ void ofApp::mouseDragged(int x, int y, int button){
 void ofApp::mousePressed(int x, int y, int button){
     
     //マウスが押された時
-    //ここの条件のところを綺麗にしようとしましたが思いつきませんでした
     if(enter_range[0]){
         rect_clicked[0] = true;
     }
