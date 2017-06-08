@@ -34,8 +34,8 @@ void Rectangle_A::cover(){
     set();
 }
 
-void Rectangle_A::sound_play_A(){
-    soundplayer.load("1.wav");
-    float volume_a = 10.0;
-    sound_set(volume_a);
-    }
+//void Rectangle_A::sound_play_A(){
+//    soundplayer.load("1.wav");
+//    float volume_a = 10.0;
+//    sound_set(volume_a);
+//    }

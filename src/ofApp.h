@@ -24,9 +24,12 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-    //クラスをそれぞれインスタンス化
-    Rectangle_A rect_a;
-    Rectangle_B rect_b;
+    
+    Rectangle *rect_a = new Rectangle_A();
+    Rectangle *rect_b = new Rectangle_B();
+
+    
+    
     
     //使いやすく
     float width = ofGetWidth();

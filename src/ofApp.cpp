@@ -32,28 +32,27 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
+  
     
     //クリックされた時
     if(rect_clicked[0]){
-        rect_a.action();
-        rect_a.sound_play_A();
+        rect_a->action();
     }else if(rect_clicked[1]){
-        rect_b.action();
-        rect_b.sound_play_B();
+        rect_b->action();
     }
     
     //左側の四角形を描画
-    rect_a.draw();
+    rect_a->draw();
 
     //右側の四角形を描画
-    rect_b.draw();
+    rect_b->draw();
 
     
     //カバーをかける
     if(mouse_moved[0]){
-        rect_a.cover();
+        rect_a->cover();
     }else if(mouse_moved[1]){
-        rect_b.cover();
+        rect_b->cover();
     }
 }
 
